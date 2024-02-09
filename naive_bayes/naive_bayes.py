@@ -3,6 +3,7 @@ from collections import defaultdict
 from collections import Counter
 
 from feature import DiscreteFeatureVector
+from exceptions import UnknownWord
 
 
 class NaiveBayes():
@@ -50,15 +51,23 @@ class NaiveBayes():
         for label in self.label_count:
 
             if detail:
-                print(likelihood[label])
+                print(f"P({label}) = {likelihood[label]}")
 
             for word in test_sentence:
-                p_word = self.discrete_feature_vector.get_probability(
-                    word, label
-                )
+
+                try:
+                    p_word = self.discrete_feature_vector.get_probability(word, label)
+                except UnknownWord as e:
+                    if detail:
+                        print(e)
+                    continue
+
                 if detail:
                     print(f'P({word}|{label}) = {p_word}')
 
                 likelihood[label] *= p_word
+
+            if detail:
+                print(f"\t=> P = {likelihood[label]}\n")
 
         return max(likelihood, key=likelihood.get)

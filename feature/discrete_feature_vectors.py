@@ -1,5 +1,6 @@
 """discrete feature vector implementation"""
 from collections import defaultdict
+from exceptions import UnknownWord
 
 
 class DiscreteFeatureVector():
@@ -33,6 +34,10 @@ class DiscreteFeatureVector():
         :param feature: a string feature/word we want to know probability
         :param label: a prior/context in which we want to compute probability
         """
+        # check for unknown word
+        if feature not in self.vocabulary:
+            raise UnknownWord(feature)
+
         freq = self.frequencies[label][feature]
         num_words = self.instance_count[label]
 
