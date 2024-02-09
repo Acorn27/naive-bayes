@@ -12,7 +12,7 @@ def main(input_file_name):
 
     my_model.fit(training_sentences=sentences, labels_list=labels)
 
-    c = my_model.predict("gently embraces blue ripples", detail=True)
+    c = my_model.predict("predictable with no fun", detail=True)
 
     print(f"Predicted class is {c}")
 
