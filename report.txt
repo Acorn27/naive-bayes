@@ -1,0 +1,84 @@
+Fold #1:
+
+1. leaf floats gently water
+	-> Gold label: 1
+	-> Model predict: 0
+2. sky reflects blue leaf
+	-> Gold label: 0
+	-> Model predict: 0
+
+Confusion matrix:
+Keys	0	1	
+0	1	1	
+
+Precision(0)=0.5,  Recall(0)=1.0
+Precision(1)=0.0,  Recall(1)=0.0
+___________________________________________________________
+Fold #2:
+
+1. water ripples under sky
+	-> Gold label: 1
+	-> Model predict: 0
+2. star glimmers night gently
+	-> Gold label: 0
+	-> Model predict: 1
+
+Confusion matrix:
+Keys	0	1	
+0	0	1	
+1	1	0	
+
+Precision(0)=0.0,  Recall(0)=0.0
+Precision(1)=0.0,  Recall(1)=0.0
+___________________________________________________________
+Fold #3:
+
+1. night embraces cold star
+	-> Gold label: 1
+	-> Model predict: 0
+2. glimmers reflects cold floats
+	-> Gold label: 0
+	-> Model predict: 1
+
+Confusion matrix:
+Keys	0	1	
+0	0	1	
+1	1	0	
+
+Precision(0)=0.0,  Recall(0)=0.0
+Precision(1)=0.0,  Recall(1)=0.0
+___________________________________________________________
+Fold #4:
+
+1. ripples night blue water
+	-> Gold label: 1
+	-> Model predict: 1
+2. leaf under star sky
+	-> Gold label: 0
+	-> Model predict: 1
+
+Confusion matrix:
+Keys	0	1	
+1	1	1	
+
+Precision(0)=0.0,  Recall(0)=0.0
+Precision(1)=0.5,  Recall(1)=1.0
+___________________________________________________________
+Fold #5:
+
+1. cold water night floats
+	-> Gold label: 1
+	-> Model predict: 1
+2. gently embraces blue ripples
+	-> Gold label: 0
+	-> Model predict: 1
+
+Confusion matrix:
+Keys	0	1	
+1	1	1	
+
+Precision(0)=0.0,  Recall(0)=0.0
+Precision(1)=0.5,  Recall(1)=1.0
+___________________________________________________________
+Macroaveraged Precision(0)=0.1,  Macroaverage Recal(0)=0.2
+Macroaveraged Precision(1)=0.2,  Macroaverage Recal(1)=0.4
