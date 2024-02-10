@@ -15,6 +15,8 @@ def compute_recall(confusion_matrix, machine_label):
 
     correctly_identified = confusion_matrix.get(machine_label, {}).get(machine_label, 0)
     actually_present = sum([item.get(machine_label, 0) for item in confusion_matrix.values()])
+    if correctly_identified == 0 or actually_present == 0:
+        return Fraction(0)
     return Fraction(correctly_identified, actually_present)
 
 
