@@ -1,4 +1,4 @@
-"""Naives Bayes implemtation for sentiment analysis"""
+"""Naive Bayes implemtation for sentiment analysis"""
 from collections import defaultdict
 from collections import Counter
 from fractions import Fraction
@@ -8,10 +8,10 @@ from exceptions import UnknownWord
 
 
 class NaiveBayes():
-    """Implementation of naives Bayes."""
+    """Implementation of naive Bayes."""
     def __init__(self, use_smoothing=False):
         """
-        Construct a Naives Bayes classifier
+        Construct a Naive Bayes classifier
         :param use_smoothing: whether to use laplace smoothing
         """
 

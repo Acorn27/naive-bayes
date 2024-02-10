@@ -1,4 +1,4 @@
-""" Custom Naives Bayes Model implement from scratch """
+""" Custom Naive Bayes Model implement from scratch """
 import argparse
 from collections import defaultdict
 from util import load_training_data
@@ -87,7 +87,7 @@ def prediction(input_file, test_sentence, detail_print):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Simple Naives Bayes Model")
+    parser = argparse.ArgumentParser(description="Simple Naive Bayes Model")
     parser.add_argument("input_file", help="Input file name")
     parser.add_argument("test_sentence", nargs='?', default='', help="String of test sentence")
     parser.add_argument("-rP", action="store_true", help="Set detail print to True")
