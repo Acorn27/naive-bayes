@@ -11,4 +11,4 @@ class UnknownWord(ValueError):
 
     @staticmethod
     def message(feature):
-        return ("Unknown word caught: " + str(feature) + " never occur in the training data. Skip")
+        return (f"Unknown word caught '{str(feature)}' never occur in the training data. Skip")
