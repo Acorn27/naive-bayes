@@ -1,6 +1,7 @@
 """discrete feature vector implementation"""
 from collections import defaultdict
 from exceptions import UnknownWord
+from fractions import Fraction
 
 
 class DiscreteFeatureVector():
@@ -44,4 +45,4 @@ class DiscreteFeatureVector():
         if self.use_laplace_smoothing:
             freq += 1
             num_words += len(self.vocabulary)
-        return freq / num_words
+        return Fraction(freq, num_words)
