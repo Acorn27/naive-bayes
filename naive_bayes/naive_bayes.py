@@ -1,6 +1,7 @@
 """Naives Bayes implemtation for sentiment analysis"""
 from collections import defaultdict
 from collections import Counter
+from fractions import Fraction
 
 from feature import DiscreteFeatureVector
 from exceptions import UnknownWord
@@ -35,7 +36,7 @@ class NaiveBayes():
 
         num_records = len(labels_list)
         for label in self.label_count:
-            self.priors[label] = self.label_count[label] / num_records
+            self.priors[label] = Fraction(self.label_count[label], num_records)
         self.is_trained = True
 
     def predict(self, test_sentence, detail=False):
@@ -70,7 +71,7 @@ class NaiveBayes():
                 likelihood[label] *= p_word
 
             if detail:
-                print(f"\t=> P = {likelihood[label]}\n")
+                print(f"\t=> P({label}|d) = {likelihood[label]} = {float(likelihood[label])}\n")
 
         return max(likelihood, key=likelihood.get)
 
