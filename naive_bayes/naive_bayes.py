@@ -43,7 +43,9 @@ class NaiveBayes():
         Predict label for a single test sentence
         :param test_sentence: string sentence
         """
-        test_sentence = test_sentence.split()
+        if not isinstance(test_sentence, list):
+            test_sentence = test_sentence.split()
+
         if not self.is_trained:
             return False
         likelihood = {label: p_label for label, p_label in self.priors.items()}
@@ -71,3 +73,13 @@ class NaiveBayes():
                 print(f"\t=> P = {likelihood[label]}\n")
 
         return max(likelihood, key=likelihood.get)
+
+    def evaluate(self, test_data, test_labels):
+
+        confusion_matrix = defaultdict(lambda: defaultdict(int))
+
+        for i, sentence in enumerate(test_data):
+            predicted_label = self.predict(sentence)
+            actual_label = test_labels[i]
+            confusion_matrix[predicted_label][actual_label] += 1
+        return confusion_matrix
